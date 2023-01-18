@@ -1,0 +1,158 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+.nav{
+   margin: auto;
+    background-color: #e32320;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 15vh;
+    align-items: flex-end;
+}
+.nav>img{
+    width: 13%;
+    height: 90%;
+    padding-left: 20px;
+}
+.nav>form{
+    padding-bottom: 20px;
+    width: 30%;
+    display: flex;
+   
+}
+
+.nav>.pin{
+    height: 80%;
+   
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-content: space-between;
+    padding-right:15px ;
+    width: 22%;
+    padding-bottom: 20px;
+   
+}
+.nav>.pin>.m{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    
+
+}
+.nav>.pin>.m>a{
+    
+    color: white;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    font-weight: 700;
+}
+.nav>.pin>.m>a>img{
+   
+   
+    height: 10px;
+}
+.nav>.pin>.n{
+    display: flex;
+    justify-content: space-around;
+    padding-left: 10px;
+    font-weight: 700;
+   
+}
+.nav>.pin>.n>a{
+    color: white;
+    text-decoration: none;
+}
+.nav>.pin>.n>a>img{
+   
+   
+    height: 10px;
+}
+.nav .vl {
+    border-left: 1px solid white;
+    height: 100%;
+  }
+  .search-field {
+    width: 100%;
+    padding: 10px 35px 10px 15px;
+    border: none;
+    border-radius: 100px;
+    outline: none;
+  }
+  
+  .search-button {
+    background: transparent;
+    border: none;
+    outline: none;
+    margin-left: -90px;
+    color: white;
+  }
+  
+  .search-button img {
+    width:20%;
+    height: 20px;
+    object-fit: cover;
+  }
+  .mid{
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(10, 10, 168);
+    color: white;
+    align-items:center ;
+    
+
+  }
+  .mid>div>p>span{
+  margin-bottom: 10px;
+  
+  
+  }
+  .mid>div:hover >p{
+    background-color: red;
+    height: 100%;
+    display: inline;
+    padding: 10px;
+   
+    
+  }
+ .carousel{
+   
+   
+    height: 40vh;
+    width: 100%;
+   
+    position: relative;
+ }
+ .carousel>.slide img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 1s ease;
+  object-fit: cover;
+ }
+ .carousel .arrow{
+  cursor: pointer;
+  position: absolute;
+  top: 30%;
+  background-color:rgba(255, 255, 255, 0.712);
+  padding: 50px 14px;
+  font-size: 25px;
+  font-weight: bold;
+  
+ }
+ .next{
+  right: 0px;
+ }
+ 
+ 
+ 
+  
+
+
