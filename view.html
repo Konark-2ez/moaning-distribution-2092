@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Andika:wght@700&family=Chivo+Mono:wght@700&family=Poppins&display=swap');
+body{
+  margin: 0;
+  padding: 0;
+  background-color: rgb(248, 239, 228);
+}
+.header{
+  width: 100%;
+  height: 5vh;
+  background-color: rgba(231,19,27,255);
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: small;
+  padding-left: 10px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.nav{
+   margin: auto;
+    background-color: rgba(231,19,27,255);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    align-items: flex-end;
+    position:sticky ; 
+    top: 0; 
+    left: 0; 
+    z-index: 9999;
+}
+.nav>img{
+  position: relative;
+    width: 13%;
+    height: 100%;
+    padding-left: 20px;
+}
+.nav>form{
+    padding-bottom: 20px;
+    width: 30%;
+    display: flex;
+   
+}
+
+.nav>.pin{
+  
+  
+    padding-right:15px ;
+    width: 24%;
+    padding-bottom: 20px;
+    height: 50%;
+   
+}
+
+
+
+.nav>.pin>.n{
+   align-items: flex-end;
+   position: relative;
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Poppins', sans-serif;
+    height: 80%;
+    padding-left: 10px;
+    font-weight: 600;
+    font-size: small;
+   
+}
+.nav>.pin>.n>a{
+  margin-top: 5px;
+    color: white;
+    text-decoration: none;
+}
+.nav>.pin>.n>img{
+   
+   
+    height: 90%;
+}
+.nav .vl {
+    border-left: 1px solid white;
+    height: 70%;
+  }
+  .search-field {
+    width: 100%;
+    padding: 10px 35px 10px 15px;
+    border: none;
+    border-radius: 100px;
+    outline: none;
+  }
+  
+  .search-button {
+    background: transparent;
+    border: none;
+    outline: none;
+    margin-left: -90px;
+    color: white;
+  }
+  
+  .search-button img {
+    width:30%;
+    height: 20px;
+    object-fit: cover;
+  }
+  .mid{
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(0,50,129,255);
+    color: white;
+    align-items:center ;
+    position: sticky;
+    z-index: 9999;
+    top:70px;
+    bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: small;
+    
+    
+   
+    
+
+  }
+  .mid>div>p>span{
+  margin-bottom: 10px;
+  
+  
+  }
+  .mid>div:hover >p{
+    background-color:  rgba(231,19,27,255);
+    height: 100%;
+    display: inline;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+   
+    
+  }
+  .main{
+    display: flex;
+    border: 1px solid blue;
+    width: 100%;
+    height:200vh;
+  }
+  .main>.side{
+    width: 20%;
+    height: 90vh;
+    border: 1px solid red;
+    margin-right: 20px;
+  }
+  .main>.block{
+    width: 100%;
+    border: 1px solid red;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+   
+  }
+  .block>.card>img{
+    width: 100%;
+    height: 70%;
+
+  }
+  .block>.card{
+    color: blue;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+   
+  }
+  .card>p{
+    height: 1.7em;
+  line-height: 1.4em;
+  margin-right: 20px;
+  overflow:auto;
+  }
+  .card>p:hover{
+    color: red;
+  }
+  .card>#btn{
+    padding: 10px;
+    border-radius: 2px;
+    color:white;
+    background-color:blue;
+    cursor: pointer;
+   border: transparent;
+   font-family: 'Poppins', sans-serif;
+  }
+
+       
+       
+           
+          
+        
+    </style>
+    <title>Item shop</title>
+</head>
+<body>
+    <header class="header"> 
+        <div><p>Our Brand Promise</p>
+            <p>Easy return</p></div>
+        <div><p>Next Day Delivery</p>
+        </div>
+        <div><p>digi-Mart Service Guarantee</p> </div>
+        <div><p>Unmatched Network</p></div>
+        <div><p>Find a store</p></div>
+        <div><p> Contact us</p></div>
+            </header>
+    <div class="nav">
+        <img src="./Add a heading (4) (1).png" alt="logo">
+        <form>
+            <input type="search" placeholder="Search" class="search-field" />
+            <input type="submit" class="search-button">
+            <img src="./icons8-search-25.png" alt="">
+          </form>
+          <div class="pin">
+             
+              <div class="n">
+                <a href="#">Select your PIN code</a>
+                <div class="vl"></div>
+                <img src="./icons8-shopping-cart-64.png" alt="error"> <a href="./cart.html">
+                    Cart</a>
+                    <div class="vl"></div>
+                    <img src="./icons8-customer-50.png" alt=""> <a href="#"> 
+                    Login</a>
+              </div>
+           
+          </div>
+    </div>
+    <div class="mid">
+        <div>
+            <p>Mobiles & Tablets <span>&#8964;</span> </p>
+        </div>
+        <div>
+            <p>Televisions <span>&#8964;</span></p>
+        </div>
+        <div>
+            <p>Audio <span>&#8964;</span></p>
+        </div>
+        <div>
+            <p>Home Appliances <span>&#8964;</span></p>
+        </div>
+        <div>
+            <p>Computers <span>&#8964;</span></p>
+        </div>
+        <div>
+            <p>Cameras <span>&#8964;</span></p>
+        </div>
+        <div>
+            <p>Kitchen Appliances <span>&#8964;</span></p>
+        </div>
+        <div>
+            <p>Personal Care <span>&#8964;</span></p>
+        </div>
+        <div>
+            <p>Accessories <span>&#8964;</span></p>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="side">
+
+        </div>
+        <div class="block">
+
+        </div>
+    </div>
+    
+</body>
+<script>
+    let block = document.querySelector(".block")
+    let api = "https://63c6398c4ebaa80285419f4e.mockapi.io/product"
+let newData=[]
+ fetchedData()
+async function fetchedData(){
+  try {
+    let request = await fetch(api)
+    let data = await request.json()
+    
+    console.log(data)
+    display(data)
+    return data
+   
+   
+    
+    
+    
+  } catch (error) {
+    console.log(Error)
+  }
+  
+  
+}
+
+  function display(data){
+    data.forEach(element => {
+      let card = document.createElement("div")
+      card.setAttribute("class","card")
+      let image = document.createElement("img")
+      image.setAttribute("src",element.image)
+      let brand = document.createElement("p")
+      brand.textContent=element.brand
+      let price = document.createElement("p")
+      price.textContent = "₹ "+element.price
+      let addToCart = document.createElement("button")
+      addToCart.setAttribute("id","btn")
+      addToCart.textContent = "Add To Cart"
+
+     
+
+
+
+
+      card.append(image,brand,price,addToCart)
+      block.append(card)
+      
+    });
+  }
+
+</script>
+</html>
