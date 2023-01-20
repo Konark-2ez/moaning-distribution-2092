@@ -447,6 +447,82 @@ body{
   height: 90vh;
   background-color: rgba(0,50,129,255);
  }
+ .carousel3{
+  height: 40vh;
+  width: 100%;
+  margin-bottom: 10px;
+  position: relative;
+ }
+ .carousel3 >.slide3 img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 1s ease;
+  object-fit: cover;
+ }
+ .carousel3 .arrow{
+  cursor: pointer;
+  position: absolute;
+  top: 30%;
+  background-color:rgba(255, 255, 255, 0.712);
+  padding: 50px 14px;
+  font-size: 25px;
+  font-weight: bold;
+  
+ }
+ .computer{
+  width: 100%;
+  height: 50vh;
+
+ }
+ .computer>div{
+  width: 100%;
+  height: 20%;
+  font-family: 'Poppins', sans-serif;
+  font-size: large;
+  padding-left: 20px;
+ 
+ }
+ .computer>.imageContainer{
+  width: 100%;
+  height: 80%;
+  
+ }
+ .computer>.imageContainer>img{
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 23%;
+  height: 80%;
+  transition: 0.5s all ease-in-out;
+  cursor: pointer;
+ }
+ .brands{
+  width: 100%;
+  height: 50vh;
+ 
+ }
+ .brands>div{
+  width: 100%;
+  height: 100%;
+ }
+ .brands>div>img{
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 22%;
+  height: 70%;
+  padding-left: 10px;
+  cursor: pointer;
+ 
+ }
+ .computer>.imageContainer>img:hover{
+  transform: scale(1.1);
+ }
+ .brands>div>img:hover{
+  transform: scale(1.1);
+ }
+
  
  
  

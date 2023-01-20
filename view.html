@@ -9,7 +9,7 @@
 body{
   margin: 0;
   padding: 0;
-  background-color: rgb(248, 239, 228);
+  background-color: white;
 }
 .header{
   width: 100%;
@@ -89,7 +89,7 @@ body{
     border-left: 1px solid white;
     height: 70%;
   }
-  .search-field {
+  #search{
     width: 100%;
     padding: 10px 35px 10px 15px;
     border: none;
@@ -146,33 +146,33 @@ body{
   }
   .main{
     display: flex;
-    border: 1px solid blue;
+ 
     width: 100%;
-    height:200vh;
+    height:1000vh;
   }
   .main>.side{
     width: 20%;
     height: 90vh;
-    border: 1px solid red;
+
     margin-right: 20px;
   }
   .main>.block{
-    width: 100%;
-    border: 1px solid red;
+    width: 80%;
+
     display:grid;
     grid-template-columns: repeat(3,1fr);
     gap: 10px;
    
   }
-  .block>.card>img{
-    width: 100%;
-    height: 70%;
-
-  }
+  
   .block>.card{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     color: blue;
     font-family: 'Poppins', sans-serif;
     text-align: center;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    width:100%;
    
   }
   .card>p{
@@ -192,6 +192,7 @@ body{
     cursor: pointer;
    border: transparent;
    font-family: 'Poppins', sans-serif;
+  
   }
 
        
@@ -216,8 +217,8 @@ body{
     <div class="nav">
         <img src="./Add a heading (4) (1).png" alt="logo">
         <form>
-            <input type="search" placeholder="Search" class="search-field" />
-            <input type="submit" class="search-button">
+            <input type="search" placeholder="Search" id="search"/>
+            <input type="submit" value="Search" class="search-button">
             <img src="./icons8-search-25.png" alt="">
           </form>
           <div class="pin">
@@ -266,6 +267,11 @@ body{
 
     <div class="main">
         <div class="side">
+          <select id="sort">
+            <option value="">Sort By Price</option>
+            <option value="asc">Low-To-High</option>
+            <option value="desc">High-To-Low</option>
+          </select>
 
         </div>
         <div class="block">
@@ -277,7 +283,11 @@ body{
 <script>
     let block = document.querySelector(".block")
     let api = "https://63c6398c4ebaa80285419f4e.mockapi.io/product"
-let newData=[]
+
+let newData= JSON.parse(localStorage.getItem("cart"))
+if(newData===null){
+   newData=[]
+}
  fetchedData()
 async function fetchedData(){
   try {
@@ -298,8 +308,37 @@ async function fetchedData(){
   
   
 }
+let formEl = document.querySelector("form")
+formEl.addEventListener("submit",function(e){
+  e.preventDefault()
+  let searchParams = formEl.search.value
+  console.log(searchParams)
+  let fetchedNewData = newData.filter((element)=>{
+    if(element.brand.toUpperCase().includes(searchParams.toUpperCase())){
+      return true
+    }else{
+      return false
+    }
+  })
+  display(fetchedNewData)
+})
+let sorting =  document.querySelector("#sort")
+sorting.addEventListener("change",()=>{
+      let filt = newData.sort((a,b)=>{
+        if(sorting.value==="asc"){
+          return parseInt(a.price)-parseInt(b.price)
+        }else if(sorting.value===""){
+          return true
+        }else if(sorting.value==="desc"){
+          return parseInt(b.price)-parseInt(a.price)
+        }
+      })
+      display(filt)
+    })
+
 
   function display(data){
+    block.innerHTML=null;
     data.forEach(element => {
       let card = document.createElement("div")
       card.setAttribute("class","card")
@@ -312,6 +351,15 @@ async function fetchedData(){
       let addToCart = document.createElement("button")
       addToCart.setAttribute("id","btn")
       addToCart.textContent = "Add To Cart"
+      addToCart.addEventListener("click",()=>{
+        if(check(element)){
+                alert("Product Already in cart")
+              }else{
+                newData.push({...element,quantity:1})
+                localStorage.setItem("cart",JSON.stringify(newData))
+                alert("Product Added To Cart")
+              }
+      })
 
      
 
@@ -323,6 +371,15 @@ async function fetchedData(){
       
     });
   }
+  function check(element){
+        for(let i=0;i<newData.length;i++){
+          if(newData[i].id===element.id){
+            return true
+          }
+
+        }
+        return false
+    }
 
 </script>
 </html>
