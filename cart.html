@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
+    <link rel="icon" type="image/x-icon" href="./favicon-32x32.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Andika:wght@700&family=Chivo+Mono:wght@700&family=Poppins&display=swap');
 body{
@@ -121,8 +122,8 @@ body{
     align-items:center ;
     position: sticky;
     z-index: 9999;
-    top:70px;
-    bottom: 20px;
+    top:10%;
+   
     font-family: 'Poppins', sans-serif;
     font-size: small;
     
@@ -150,7 +151,7 @@ body{
     display: flex;
  
  width: 100%;
- height:1000vh;
+
   }
   .main>.counter{
     width: 100%;
@@ -283,6 +284,36 @@ body{
   .checkout>button:hover{
     background-color: blue;
   }
+  @media only screen and (max-width: 1084px){
+    .nav>.pin>.n>a>span{
+    display: none;
+ 
+   }
+   .header{
+    display: none;
+   }
+   .main>.counter>.cash>.card>.heading>button{
+      font-size:xx-small;
+  
+   }
+
+  }
+  @media only screen and (max-width:600px){
+    .main{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav>.pin>.n>a>span{
+    display: none;
+ 
+   }
+   .header{
+    display: none;
+   }
+
+  }
   
   
 
@@ -310,12 +341,12 @@ body{
           <div class="pin">
              
               <div class="n">
-                <a href="#">Select your PIN code</a>
+                <a href="#"> <span>Select your PIN</span>code</a>
                 <div class="vl"></div>
                 <img src="./icons8-shopping-cart-64.png" alt="error"> <a href="./cart.html">
                     Cart</a>
                     <div class="vl"></div>
-                    <img src="./icons8-customer-50.png" alt=""> <a href="#"> 
+                    <img src="./icons8-customer-50.png" alt=""> <a id="l" href="#"> 
                     Login</a>
               </div>
            
@@ -459,6 +490,17 @@ body{
       }
      total.textContent= sum
     }
+    let logi = document.getElementById("l")
+let siginData = JSON.parse(localStorage.getItem("data"))
+
+
+if(siginData !== null){
+  for(let i=0;i<siginData.length;i++){
+    logi.textContent =siginData[i].username
+  }
+  
+
+}
     
 </script>
 </html>

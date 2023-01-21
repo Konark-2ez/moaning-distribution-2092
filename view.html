@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./favicon-32x32.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Andika:wght@700&family=Chivo+Mono:wght@700&family=Poppins&display=swap');
 body{
@@ -148,11 +149,11 @@ body{
     display: flex;
  
     width: 100%;
-    height:1000vh;
+   
   }
   .main>.side{
     width: 20%;
-    height: 90vh;
+    
 
     margin-right: 20px;
   }
@@ -160,7 +161,7 @@ body{
     width: 80%;
 
     display:grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(2,1fr);
     gap: 10px;
    
   }
@@ -229,7 +230,7 @@ body{
                 <img src="./icons8-shopping-cart-64.png" alt="error"> <a href="./cart.html">
                     Cart</a>
                     <div class="vl"></div>
-                    <img src="./icons8-customer-50.png" alt=""> <a href="#"> 
+                    <img src="./icons8-customer-50.png" alt=""> <a id="l" href="#"> 
                     Login</a>
               </div>
            
@@ -328,7 +329,7 @@ sorting.addEventListener("change",()=>{
         if(sorting.value==="asc"){
           return parseInt(a.price)-parseInt(b.price)
         }else if(sorting.value===""){
-          return true
+          return display(newData)
         }else if(sorting.value==="desc"){
           return parseInt(b.price)-parseInt(a.price)
         }
@@ -380,6 +381,17 @@ sorting.addEventListener("change",()=>{
         }
         return false
     }
+    let logi = document.getElementById("l")
+let siginData = JSON.parse(localStorage.getItem("data"))
+
+
+if(siginData !== null){
+  for(let i=0;i<siginData.length;i++){
+    logi.textContent =siginData[i].username
+  }
+  
+
+}
 
 </script>
 </html>
