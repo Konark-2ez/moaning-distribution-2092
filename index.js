@@ -191,6 +191,18 @@ setInterval(() => {
 }, 2000);
 
 //FOR SEARCH
+let logi = document.getElementById("l")
+let siginData = JSON.parse(localStorage.getItem("data"))
+
+
+if(siginData !== null){
+  for(let i=0;i<siginData.length;i++){
+    logi.textContent =siginData[i].username
+  }
+  
+
+}
+
 
 
 
